@@ -1,0 +1,19 @@
+
+
+form {
+    display: inline-block;
+}
+
+.Login {
+    padding: 100px 0;
+}
+
+.Login form {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+div {
+    text-align: center;
+    background-color: #272424;
+}
