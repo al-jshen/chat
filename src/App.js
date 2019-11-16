@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-const chara = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!\"#$%\&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+const chara = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
 
 class App extends React.Component {
 
