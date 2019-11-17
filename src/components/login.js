@@ -6,7 +6,7 @@ class Login extends React.Component {
     state = {
         username: '',
         password: '',
-
+        Authenticated: false,
     }
     
     change = (e) => {
@@ -18,13 +18,14 @@ class Login extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
+
     }
 
     render() {
         return(
             <div>
-                <h1 style={{textAlign: 'center', paddingTop: 50, color: 'white'}}>Du hello</h1>
-                <div className="Login">
+                <h1 style={{textAlign: 'center', paddingTop: 100, color: 'white'}}>Gotta Go Faster</h1>
+                <div className="Login" style={{marginTop: '50px'}}>
                     <form>
                         <FormGroup>
                             <FormControl 
