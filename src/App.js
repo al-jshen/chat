@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Pwgen from './components/pwgen';
-import Chat from './components/chat';
+import Chat from './components/chat/chat';
 import Login from './components/login';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 

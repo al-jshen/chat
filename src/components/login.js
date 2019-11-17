@@ -20,6 +20,7 @@ class Login extends React.Component {
             return true;
         }
         else {
+            this.setState({ error: 'FUDGE OFF'});
             return false;
         }
     }
@@ -27,7 +28,7 @@ class Login extends React.Component {
     onSubmit = (e) => {
         console.log(this.state);
         if (this.isValid()) {
-            console.log("logged in");
+            this.props.history.push('/');
         }
     }
 
