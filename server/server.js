@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/auth', (req, res) => {
+    console.log(req.body.username, req.body.password)
     if (user_data[req.body.username] == req.body.password) {
         res.send(true);
     } else {

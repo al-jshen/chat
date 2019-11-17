@@ -17,28 +17,27 @@ class Login extends React.Component {
         });
     }
 
-    isValid() {
+    onSubmit = () => {
         const username = this.state.username;
         const password = this.state.password;
-        axios.post('/auth', {
+        axios.post('http://***REMOVED***:3400/auth', {
             username: username,
             password: password
         })
         .then((res) => {
-            return true
+            if (res.data) {
+                this.props.history.push('/')
+            } else {
+                this.setState({
+                    error: "FAILED TO AUTHENTICATE"
+                })
+            }
         })
         .catch((err) => {
             this.setState({
                 error: "ERROR"
             })
         })
-    }
-
-    onSubmit = (e) => {
-        console.log(this.state);
-        if (this.isValid()) {
-            this.props.history.push('/');
-        }
     }
 
     render() {
@@ -67,7 +66,7 @@ class Login extends React.Component {
                         <Button 
                         className="newButton"
                         style={{backgroundColor: '#704000', borderColor: '#ceacac'}} 
-                        block onClick={(e) => this.onSubmit(e)}>Chat</Button>
+                        block onClick={this.onSubmit}>Chat</Button>
                         <h1 style={{textAlign: 'center', paddingTop: 100, color: 'red'}}>{this.state.error}</h1>
                     </form>
                 </div>
