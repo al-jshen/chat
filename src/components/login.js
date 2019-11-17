@@ -6,7 +6,7 @@ class Login extends React.Component {
     state = {
         username: '',
         password: '',
-        Authenticated: false,
+        error: '',
     }
     
     change = (e) => {
@@ -15,10 +15,20 @@ class Login extends React.Component {
         });
     }
 
-    onSubmit = (e) => {
-        e.preventDefault();
-        console.log(this.state);
+    isValid() {
+        if (this.state.username === 'skooma' && this.state.password === 'skooma') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
+    onSubmit = (e) => {
+        console.log(this.state);
+        if (this.isValid()) {
+            console.log("logged in");
+        }
     }
 
     render() {
@@ -48,6 +58,7 @@ class Login extends React.Component {
                         className="newButton"
                         style={{backgroundColor: '#704000', borderColor: '#ceacac'}} 
                         block onClick={(e) => this.onSubmit(e)}>Chat</Button>
+                        <h1 style={{textAlign: 'center', paddingTop: 100, color: 'red'}}>{this.state.error}</h1>
                     </form>
                 </div>
             </div>
