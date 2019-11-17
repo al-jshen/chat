@@ -20,7 +20,7 @@ class Login extends React.Component {
             return true;
         }
         else {
-            this.setState({ error: 'FUDGE OFF'});
+            this.setState({ error: 'FUDGE OFF' });
             return false;
         }
     }
