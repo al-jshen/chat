@@ -1,6 +1,7 @@
 import React from 'react';
 import './login.css';
 import { Button, FormGroup, FormControl } from "react-bootstrap";
+const axios = require('axios');
 
 class Login extends React.Component {
     state = {
@@ -10,19 +11,27 @@ class Login extends React.Component {
     }
     
     change = (e) => {
+        e.preventDefault();
         this.setState({
             [e.target.name]: e.target.value
         });
     }
 
     isValid() {
-        if (this.state.username === 'skooma' && this.state.password === 'skooma') {
-            return true;
-        }
-        else {
-            this.setState({ error: 'FUDGE OFF'});
-            return false;
-        }
+        const username = this.state.username;
+        const password = this.state.password;
+        axios.post('/auth', {
+            username: username,
+            password: password
+        })
+        .then((res) => {
+            return true
+        })
+        .catch((err) => {
+            this.setState({
+                error: "ERROR"
+            })
+        })
     }
 
     onSubmit = (e) => {
