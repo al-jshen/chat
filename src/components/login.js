@@ -28,6 +28,7 @@ class Login extends React.Component {
                     <form>
                         <FormGroup>
                             <FormControl 
+                            style={{backgroundColor: '#534848', color: 'white', width: '300px'}}
                             autoFocus value={this.state.username} 
                             name='username' 
                             onChange={e => this.change(e)}
@@ -35,13 +36,17 @@ class Login extends React.Component {
                         </FormGroup>
                         <FormGroup>
                             <FormControl 
+                            style={{backgroundColor: '#534848', color: 'white'}}
                             value={this.state.password} 
                             name='password' 
                             type="password" 
                             onChange={e => this.change(e)}
                             placeholder="Password"></FormControl>
                         </FormGroup>
-                        <Button block onClick={(e) => this.onSubmit(e)}>chat pls</Button>
+                        <Button 
+                        className="newButton"
+                        style={{backgroundColor: '#704000', borderColor: '#ceacac'}} 
+                        block onClick={(e) => this.onSubmit(e)}>Chat</Button>
                     </form>
                 </div>
             </div>
