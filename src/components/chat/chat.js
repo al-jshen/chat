@@ -3,7 +3,7 @@ import React from 'react';
 class Chat extends React.Component {
   render() {
     return(
-      <p>Chat</p>
+      <h1 style={{color: 'white', paddingTop: '200px'}}>GOOD MORNING GAMERS</h1>
     );
   }
 }

@@ -6,7 +6,7 @@ class Login extends React.Component {
     state = {
         username: '',
         password: '',
-
+        error: '',
     }
     
     change = (e) => {
@@ -15,19 +15,32 @@ class Login extends React.Component {
         });
     }
 
+    isValid() {
+        if (this.state.username === 'skooma' && this.state.password === 'skooma') {
+            return true;
+        }
+        else {
+            this.setState({ error: 'FUDGE OFF'});
+            return false;
+        }
+    }
+
     onSubmit = (e) => {
-        e.preventDefault();
         console.log(this.state);
+        if (this.isValid()) {
+            this.props.history.push('/');
+        }
     }
 
     render() {
         return(
             <div>
-                <h1 style={{textAlign: 'center', paddingTop: 50, color: 'white'}}>Du hello</h1>
-                <div className="Login">
+                <h1 style={{textAlign: 'center', paddingTop: 100, color: 'white'}}>Gotta Go Faster</h1>
+                <div className="Login" style={{marginTop: '50px'}}>
                     <form>
                         <FormGroup>
                             <FormControl 
+                            style={{backgroundColor: '#534848', color: 'white', width: '300px'}}
                             autoFocus value={this.state.username} 
                             name='username' 
                             onChange={e => this.change(e)}
@@ -35,13 +48,18 @@ class Login extends React.Component {
                         </FormGroup>
                         <FormGroup>
                             <FormControl 
+                            style={{backgroundColor: '#534848', color: 'white'}}
                             value={this.state.password} 
                             name='password' 
                             type="password" 
                             onChange={e => this.change(e)}
                             placeholder="Password"></FormControl>
                         </FormGroup>
-                        <Button block onClick={(e) => this.onSubmit(e)}>chat pls</Button>
+                        <Button 
+                        className="newButton"
+                        style={{backgroundColor: '#704000', borderColor: '#ceacac'}} 
+                        block onClick={(e) => this.onSubmit(e)}>Chat</Button>
+                        <h1 style={{textAlign: 'center', paddingTop: 100, color: 'red'}}>{this.state.error}</h1>
                     </form>
                 </div>
             </div>

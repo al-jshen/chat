@@ -5,7 +5,8 @@ form {
 }
 
 .Login {
-    padding: 100px 0;
+    padding: 50px 0;
+    color: #ceacac;
 }
 
 .Login form {
@@ -16,4 +17,9 @@ form {
 div {
     text-align: center;
     background-color: #272424;
+    color: #534848
+}
+
+Formcontrol::placeholder {
+    color: white;
 }
