@@ -1,7 +1,7 @@
 import React from 'react';
 import './login.css';
 import { Button, FormGroup, FormControl } from "react-bootstrap";
-import { authurl } from '../../server/url';
+import { authurl } from '../url';
 const axios = require('axios');
 
 class Login extends React.Component {
