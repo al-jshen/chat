@@ -2,6 +2,7 @@
 
 # private info 
 /server/url.js
+/server/user_data.js
 
 # dependencies
 /node_modules
