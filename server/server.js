@@ -3,13 +3,10 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const port = 3400;
+import { user_data } from './user_data';
 
 app.use(cors());
 app.use(bodyParser.json());
-
-const user_data = {
-    'skooma': 'skooma',
-}
 
 app.get('/', (req, res) => {
     res.send('Hello world!');

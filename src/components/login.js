@@ -1,6 +1,7 @@
 import React from 'react';
 import './login.css';
 import { Button, FormGroup, FormControl } from "react-bootstrap";
+import { authurl } from '../../server/url';
 const axios = require('axios');
 
 class Login extends React.Component {
@@ -20,7 +21,7 @@ class Login extends React.Component {
     onSubmit = () => {
         const username = this.state.username;
         const password = this.state.password;
-        axios.post('http://***REMOVED***:3400/auth', {
+        axios.post(authurl, {
             username: username,
             password: password
         })
