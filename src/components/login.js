@@ -44,7 +44,7 @@ class Login extends React.Component {
     render() {
         return(
             <div className="form">
-                <h1>Walk Faster</h1>
+                <h1>Gotta Go Faster</h1>
                 <form method="post">
                     <div class="container">
                         <label>
