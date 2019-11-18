@@ -18,7 +18,8 @@ class Login extends React.Component {
         });
     }
 
-    onSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault()
         const username = this.state.username;
         const password = this.state.password;
         axios.post(authurl, {
@@ -26,11 +27,15 @@ class Login extends React.Component {
             password: password
         })
         .then((res) => {
+            console.log(res.data);
             if (res.data) {
                 this.props.history.push('/')
             } else {
                 this.setState({
                     error: "FAILED TO AUTHENTICATE"
+                })
+                .then(() => {
+                    console.log(this.state.error)
                 })
             }
         })
@@ -45,8 +50,8 @@ class Login extends React.Component {
         return(
             <div className="form">
                 <h1>Gotta Go Faster</h1>
-                <form method="post">
-                    <div class="container">
+                <form onSubmit={this.handleSubmit}>
+                    <div className="container">
                         <label>
                             <input 
                             autoFocus
@@ -54,7 +59,7 @@ class Login extends React.Component {
                             placeholder="Username" 
                             name="username" 
                             value={this.state.username} 
-                            onChange={e => this.change(e)}
+                            onChange={this.change}
                             required/>
                         </label>
 
@@ -64,11 +69,13 @@ class Login extends React.Component {
                             placeholder="Password" 
                             name="password"
                             value={this.state.password}
-                            onChange={e => this.change(e)} 
+                            onChange={this.change} 
                             required/>
                         </label>
 
-                        <button onClick={this.onSubmit}>Chat</button>
+                        <button type="submit">Chat</button>
+
+                        <h2>{this.state.error}</h2>
                     </div>
                 </form>
             </div>
