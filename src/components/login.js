@@ -1,6 +1,5 @@
 import React from 'react';
 import './login.css';
-import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { authurl } from '../url';
 const axios = require('axios');
 
@@ -56,7 +55,7 @@ class Login extends React.Component {
                             name="username" 
                             value={this.state.username} 
                             onChange={e => this.change(e)}
-                            required></input>
+                            required/>
                         </label>
 
                         <label>
@@ -66,10 +65,10 @@ class Login extends React.Component {
                             name="password"
                             value={this.state.password}
                             onChange={e => this.change(e)} 
-                            required></input>
+                            required/>
                         </label>
 
-                        <button onClick={this.onSubmit} blocks>Chat</button>
+                        <button onClick={this.onSubmit}>Chat</button>
                     </div>
                 </form>
             </div>
