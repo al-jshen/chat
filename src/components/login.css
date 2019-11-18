@@ -1,25 +1,62 @@
+h1 {
+    color: rgb(219, 208, 208);
+    position: relative;
+    top: 150px;
+}
 
+.container {
+    padding: 16px;
+}
 
 form {
-    display: inline-block;
-}
-
-.Login {
-    padding: 50px 0;
-    color: #ceacac;
-}
-
-.Login form {
-    margin: 0 auto;
-    max-width: 400px;
-}
-
-div {
     text-align: center;
-    background-color: #272424;
-    color: #534848
+    margin-top: 200px;
+    padding-left: none;
+    width: 25%;
+    min-width: 300px;
+    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #262626;
 }
 
-Formcontrol::placeholder {
+div.form {
+    display: block;
+    text-align: center;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 8px 20px;
+    margin-bottom: 5px;
+    display: inline-block;
+    border: 1px solid rgb(68, 58, 58);
+    box-sizing: border-box;
+    background-color: #534848;
+    color: #fff;
+    font-size: 17px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.308);
+}
+
+label {
+    width: 100%;
+}
+
+button {
+    background-color: rgb(78, 36, 2);
     color: white;
+    padding: 8px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 17px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover {
+    opacity: 0.8;
 }

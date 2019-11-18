@@ -1,8 +1,8 @@
 import React from 'react';
 import './login.css';
-import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { authurl } from '../url';
 const axios = require('axios');
+
 
 class Login extends React.Component {
     state = {
@@ -43,34 +43,34 @@ class Login extends React.Component {
 
     render() {
         return(
-            <div>
-                <h1 style={{textAlign: 'center', paddingTop: 100, color: 'white'}}>Gotta Go Faster</h1>
-                <div className="Login" style={{marginTop: '50px'}}>
-                    <form>
-                        <FormGroup>
-                            <FormControl 
-                            style={{backgroundColor: '#534848', color: 'white', width: '300px'}}
-                            autoFocus value={this.state.username} 
-                            name='username' 
+            <div className="form">
+                <h1>Gotta Go Faster</h1>
+                <form method="post">
+                    <div class="container">
+                        <label>
+                            <input 
+                            autoFocus
+                            type="text" 
+                            placeholder="Username" 
+                            name="username" 
+                            value={this.state.username} 
                             onChange={e => this.change(e)}
-                            placeholder="Username"></FormControl>
-                        </FormGroup>
-                        <FormGroup>
-                            <FormControl 
-                            style={{backgroundColor: '#534848', color: 'white'}}
-                            value={this.state.password} 
-                            name='password' 
+                            required/>
+                        </label>
+
+                        <label>
+                            <input 
                             type="password" 
-                            onChange={e => this.change(e)}
-                            placeholder="Password"></FormControl>
-                        </FormGroup>
-                        <Button 
-                        className="newButton"
-                        style={{backgroundColor: '#704000', borderColor: '#ceacac'}} 
-                        block onClick={this.onSubmit}>Chat</Button>
-                        <h1 style={{textAlign: 'center', paddingTop: 100, color: 'red'}}>{this.state.error}</h1>
-                    </form>
-                </div>
+                            placeholder="Password" 
+                            name="password"
+                            value={this.state.password}
+                            onChange={e => this.change(e)} 
+                            required/>
+                        </label>
+
+                        <button onClick={this.onSubmit}>Chat</button>
+                    </div>
+                </form>
             </div>
         );
     }

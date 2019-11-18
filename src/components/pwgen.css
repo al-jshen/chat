@@ -1,58 +1,73 @@
 .App {
-    text-align: center;
-  }
-  
-  .App-logo {
-    height: 40vmin;
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #09d3ac;
-  }
-  
-  .button {
-    background-color: #009e22;
-    border: none;
-    color: rgb(1, 31, 11);
-    padding: 16px 32px;
-    text-align: center;
-    font-size: calc(10px + 2vmin);
-    margin: 4px 2px;
-    opacity: 1;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
-  
-  .copy {
-    background-color: #009e22;
-    border: none;
-    color: rgb(0, 0, 0);
-    padding: 12px 24px;
-    text-align: center;
-    margin: 4px 2px;
-    opacity: 1;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-    visibility: hidden;
-  }
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.button {
+  background-color: #009e22;
+  border: none;
+  color: rgb(1, 31, 11);
+  padding: 16px 32px;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  width: 20%;
+  min-width: 200px;
+  border-radius: 8px;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.copy {
+  background-color: #009e22;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 18px;
+  margin: 2px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  visibility: hidden;
+  width: 5%;
+  height: 55px;
+  min-width: 100px;
+  border-radius: 8px;
+  position: relative;
+  top: 50px;
+}
+
+p {
+  position: relative;
+  top: 30px;
+}
