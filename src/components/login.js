@@ -35,7 +35,7 @@ class Login extends React.Component {
             if (res.data) {
                 this.props.history.push('/');
                 this.props.user(this.state.username);
-                this.props.islogged();
+                this.props.islogged(true);
             } else {
                 this.setState({
                     error: "FAILED TO AUTHENTICATE"
@@ -99,7 +99,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         user: (user) => { dispatch({type: 'USERNAME', payload: user}) },
-        islogged: () => { dispatch({type: 'LOGIN'})}
+        islogged: (islogged) => { dispatch({type: 'LOGIN', payload: islogged} )}
     };
 };
 
