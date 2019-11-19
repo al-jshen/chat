@@ -4,7 +4,7 @@ import './chat.css';
 
 class Chat extends React.Component {
 
-  logout = () => {
+  handleLogout = () => {
     this.props.rename('');
     this.props.changelog(false);
     this.props.history.push('/login');
@@ -20,7 +20,7 @@ class Chat extends React.Component {
           <li className="user"><a>DU HELLO {this.props.user.toUpperCase()}</a></li>
           <li><a onClick={() => this.props.history.push('/pwgen')}>Gen Password</a></li>
           <li><a href='https://github.com/al-jshen/chat' target="_blank">Source Code</a></li>
-          <li><a onClick={this.logout}>Log Out</a></li>
+          <li><a onClick={this.handleLogout}>Log Out</a></li>
         </ul>
       </div>
     );

@@ -33,9 +33,9 @@ class Login extends React.Component {
         .then((res) => {
             console.log(res.data);
             if (res.data) {
-                this.props.history.push('/');
                 this.props.rename(this.state.username);
                 this.props.changelog(true);
+                this.props.history.push('/');
             } else {
                 this.setState({
                     error: "FAILED TO AUTHENTICATE"
