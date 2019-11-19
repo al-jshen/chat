@@ -47,7 +47,7 @@ class Login extends React.Component {
         })
         .catch((err) => {
             this.setState({
-                error: "ERROR"
+                error: "Wrong boi"
             })
         })
     }
