@@ -5,16 +5,19 @@ import './chat.css';
 class Chat extends React.Component {
 
   logout = () => {
-    this.props.user('');
-    this.props.islogged(false);
+    this.props.rename('');
+    this.props.changelog(false);
     this.props.history.push('/login');
   }
 
   render() {
+    if (!this.props.islogged) {
+      this.props.history.push('/login');
+    }
     return(
       <div>
         <ul>
-          <li className="user"><a>MA NAME {this.props.user}</a></li>
+          <li className="user"><a>DU HELLO {this.props.user.toUpperCase()}</a></li>
           <li><a onClick={() => this.props.history.push('/pwgen')}>Gen Password</a></li>
           <li><a href='https://github.com/al-jshen/chat' target="_blank">Source Code</a></li>
           <li><a onClick={this.logout}>Log Out</a></li>
@@ -33,8 +36,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      user: (user) => { dispatch({type: 'USERNAME', payload: user}) },
-      islogged: (islogged) => { dispatch({type: 'LOGIN', payload: islogged} )}
+      rename: (user) => { dispatch({type: 'USERNAME', payload: user}) },
+      changelog: (islogged) => { dispatch({type: 'LOGIN', payload: islogged} )}
   };
 };
 

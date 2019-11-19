@@ -34,8 +34,8 @@ class Login extends React.Component {
             console.log(res.data);
             if (res.data) {
                 this.props.history.push('/');
-                this.props.user(this.state.username);
-                this.props.islogged(true);
+                this.props.rename(this.state.username);
+                this.props.changelog(true);
             } else {
                 this.setState({
                     error: "FAILED TO AUTHENTICATE"
@@ -98,8 +98,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        user: (user) => { dispatch({type: 'USERNAME', payload: user}) },
-        islogged: (islogged) => { dispatch({type: 'LOGIN', payload: islogged} )}
+        rename: (user) => { dispatch({type: 'USERNAME', payload: user}) },
+        changelog: (islogged) => { dispatch({type: 'LOGIN', payload: islogged} )}
     };
 };
 
