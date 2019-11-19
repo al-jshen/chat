@@ -1,14 +1,18 @@
 import React from 'react';
 import './login.css';
 import { authurl } from '../url';
+import { connect } from 'react-redux';
+
 const axios = require('axios');
 
-
 class Login extends React.Component {
-    state = {
-        username: '',
-        password: '',
-        error: '',
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            password: '',
+            error: '',
+        }
     }
     
     change = (e) => {
@@ -29,7 +33,9 @@ class Login extends React.Component {
         .then((res) => {
             console.log(res.data);
             if (res.data) {
-                this.props.history.push('/')
+                this.props.history.push('/');
+                this.props.user(this.state.username);
+                this.props.islogged();
             } else {
                 this.setState({
                     error: "FAILED TO AUTHENTICATE"
@@ -83,4 +89,18 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+    return {
+        user: state.user,
+        islogged: state.islogged
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        user: (user) => { dispatch({type: 'USERNAME', payload: user}) },
+        islogged: () => { dispatch({type: 'LOGIN'})}
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
