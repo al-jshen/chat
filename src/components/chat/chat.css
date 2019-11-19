@@ -1,0 +1,36 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-image: linear-gradient(to right, #42180c, #1a1818);
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+  }
+  
+li {
+    color: rgb(182, 125, 3);
+    font-size: 18px;
+    font-weight: 200;
+}
+
+li a {
+    display: block;
+    color: rgb(182, 125, 3);;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li.user {
+    font-weight: 600;
+    color: rgb(233, 160, 3);
+    padding-top: 30px;
+}
+
+li a:hover {
+    background-image: linear-gradient(to right, #972a0c, #1a1818);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
