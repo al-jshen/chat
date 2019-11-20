@@ -79,7 +79,7 @@ class Login extends React.Component {
                             required/>
                         </label>
 
-                        <button type="submit">Chat</button>
+                        <button type="submit" className="submit">Chat</button>
 
                         <h2>{this.state.error}</h2>
                     </div>

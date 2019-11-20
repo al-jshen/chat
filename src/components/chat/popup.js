@@ -1,9 +1,7 @@
 import React from 'react';
-import connect from 'react-redux';
 import './popup.css';
 
 class Popup extends React.Component {
-
     render() {
         return(
             <div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './chat.css';
 import Popup from './popup';
+import { renderAs } from 'react-router-dom';
 
 class Chat extends React.Component {
   constructor(props) {
@@ -31,13 +32,13 @@ class Chat extends React.Component {
       <div>
         <div>
           <ul>
-            <li className="user"><a onClick={this.handlePopup}>DU HELLO {this.props.user.toUpperCase()}</a></li>
-            <li><a onClick={() => this.props.history.push('/pwgen')}>Gen Password</a></li>
+            <li className="user"><button className="nav" onClick={this.handlePopup}>DU HELLO {this.props.user.toUpperCase()}</button></li>
+            <li><button className="nav" onClick={() => this.props.history.push('/pwgen')}>Gen Password</button></li>
             <li><a href='https://github.com/al-jshen/chat' target="_blank">Source Code</a></li>
-            <li><a onClick={this.handleLogout}>Log Out</a></li>
+            <li><button className="nav" onClick={this.handleLogout}>Log Out</button></li>
           </ul>
         </div>
-        {this.state.popup ? <Popup/> : null}
+        {this.state.popup ? <div><Popup/></div> : null}
       </div>
     );
   }
