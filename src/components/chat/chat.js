@@ -49,23 +49,23 @@ class Chat extends React.Component {
       this.props.history.push('/login');
     }
     return(
-      <div>
-        <div>
-          <ul>
-            <li className="user"><button className="nav" onClick={this.handlePopup}>DU HELLO {this.props.user.toUpperCase()}</button></li>
-            <li><button className="nav" onClick={() => this.props.history.push('/pwgen')}>Gen Password</button></li>
-            <li><a href='https://github.com/al-jshen/chat' target="_blank" rel="noopener noreferrer">Source Code</a></li>
-            <li><button className="nav" onClick={this.handleLogout}>Log Out</button></li>
-          </ul>
-        </div>
+      <div className="all">
+          <div className="navbar">
+              <ul>
+                <li className="user"><button className="nav" onClick={this.handlePopup}>DU HELLO {this.props.user.toUpperCase()}</button></li>
+                <li><button className="nav" onClick={() => this.props.history.push('/pwgen')}>Gen Password</button></li>
+                <li><a href='https://github.com/al-jshen/chat' target="_blank" rel="noopener noreferrer">Source Code</a></li>
+                <li><button className="nav" onClick={this.handleLogout}>Log Out</button></li>
+              </ul>
+          </div>
 
-        {this.state.popup ? <div><Popup/></div> : null}
+              {this.state.popup ? <div><Popup/></div> : null}
 
-          <div>
+          <div className="main">
               <div className="chatDisplayBox">
                   {this.state.list.map((item, index) => {
                       return (
-                        <div key={index}>{item}</div>
+                        <div key={index} className="text"><p>{item}</p></div>
                       )
                   })}
               </div>
