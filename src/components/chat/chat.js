@@ -63,11 +63,13 @@ class Chat extends React.Component {
 
           <div className="main">
               <div className="chatDisplayBox">
-                  {this.state.list.map((item, index) => {
-                      return (
-                        <div key={index} className="text"><p>{item}</p></div>
-                      )
-                  })}
+                  <div className="textDisplayBox">
+                      {this.state.list.map((item, index) => {
+                          return (
+                            <div key={index} className="text"><p>{item}</p></div>
+                          )
+                      })}
+                  </div>
               </div>
 
               <div className="chatInputBox">

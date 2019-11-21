@@ -124,29 +124,35 @@ input.text {
 }
 
 div.chatDisplayBox {
-    position: relative;
+    position: absolute;
+    width: 100%;
+    height: 94%;
+    overflow: auto;
+}
+
+div.textDisplayBox {
+    position: absolute;
     padding: none;
     width: 50%;
-    text-align: right;
-    color: #fff;
-    float: right;
+    right: 0;;
+    bottom: 0;
     display: flex;
     flex-flow: column;
     flex-direction: column;
-    
+    overflow: auto;
 }
 
 div.text {
     position: relative;
-    margin: 10px;
-    vertical-align: right;
-    width: auto;
+    margin: 10px 2%;
+    background-color: #534848;
+    border-radius: 8px;
+    text-align: right;
 }
 
 .text p{
     position: relative;
     margin: 0;
-    padding: 5px;
-    background-color: #534848;
-    border-radius: 8px;
+    padding: 5px 10px;
+    color: #fff;
 }
