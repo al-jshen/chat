@@ -1,11 +1,27 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 15%;
-    background-image: linear-gradient(to right, #42180c, #1a1818);
+.all {
     height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+}
+
+.navbar {
     position: fixed;
+    height: 100%;
+    width: 15%;
+    margin: 0px;
+    padding: 0px;
+    background-image: linear-gradient(to right, #42180c, #1a1818);
+}
+
+ul {
+    position: relative;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
     overflow: auto;
   }
   
@@ -13,6 +29,8 @@ li {
     color: rgb(182, 125, 3);
     font-size: 18px;
     font-weight: 200;
+    padding: 0px;
+    margin: 0px;
 }
 
 li.user {
@@ -31,7 +49,6 @@ li button.nav {
     position: relative;
     width: 100%;
     text-align: left;
-    padding-left: 20px;
     padding-top: 8px;
     padding-bottom: 8px;
 }
@@ -45,7 +62,6 @@ li a {
     position: relative;
     width: 100%;
     text-align: left;
-    padding-left: 20px;
     padding-top: 8px;
     font-weight: 400;
     padding-bottom: 8px;
@@ -67,4 +83,76 @@ li button:hover {
     color: white;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+/* main body */
+.main {
+    width: 85%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+div.chatInputBox {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    height: 6%;
+}
+
+button.send {
+    position: relative;
+    display: inline block;
+    outline: none;
+}
+
+button:focus.send {
+    outline: none;
+}
+
+input.text {
+    position: relative;
+    display: inline block;
+    margin: none;
+    padding: none;
+    outline: none;
+    height: 100%;
+}
+
+div.chatDisplayBox {
+    position: absolute;
+    width: 100%;
+    height: 94%;
+    overflow: auto;
+}
+
+div.textDisplayBox {
+    position: absolute;
+    padding: none;
+    width: 50%;
+    right: 0;;
+    bottom: 0;
+    display: flex;
+    flex-flow: column;
+    flex-direction: column;
+    overflow: auto;
+}
+
+div.text {
+    position: relative;
+    margin: 10px 2%;
+    background-color: #534848;
+    border-radius: 8px;
+    text-align: right;
+}
+
+.text p{
+    position: relative;
+    margin: 0;
+    padding: 5px 10px;
+    color: #fff;
 }
