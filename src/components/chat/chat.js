@@ -76,7 +76,7 @@ class Chat extends React.Component {
               </div>
 
               <div className="chatInputBox">
-                    <input className="text" type="text" autoFocus value={this.state.text} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
+                    <input className="inputText" type="text" autoFocus value={this.state.text} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
                     <button className="send" onClick={this.handleAdd}>Send</button>
               </div>
           </div>
