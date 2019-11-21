@@ -51,11 +51,10 @@ label {
     width: 100%;
 }
 
-button {
+.submit {
     background-color: rgb(78, 36, 2);
     color: white;
     padding: 8px 20px;
-    margin: 10px 0;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -63,6 +62,6 @@ button {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-button:hover {
+button:hover.submit {
     opacity: 0.8;
 }
