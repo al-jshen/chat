@@ -42,6 +42,7 @@ class Chat extends React.Component {
             'list': [...this.state.list, this.state.text],
             'text': ''
         })
+        console.log(this.state.list)
     }
 
   render() {
@@ -63,13 +64,15 @@ class Chat extends React.Component {
 
           <div className="main">
               <div className="chatDisplayBox">
-                  <div className="textDisplayBox">
-                      {this.state.list.map((item, index) => {
-                          return (
-                            <div key={index} className="text"><p>{item}</p></div>
-                          )
-                      })}
-                  </div>
+                  {this.state.list.map((item, index) => {
+                      return (
+                        <div key={index} className="textDisplayBox">
+                            <div className="text">
+                                <p>{item}</p>
+                            </div>
+                        </div>
+                      )
+                  })}
               </div>
 
               <div className="chatInputBox">
@@ -77,6 +80,7 @@ class Chat extends React.Component {
                     <button className="send" onClick={this.handleAdd}>Send</button>
               </div>
           </div>
+
       </div>
     );
   }
