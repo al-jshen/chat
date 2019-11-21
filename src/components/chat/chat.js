@@ -32,7 +32,7 @@ class Chat extends React.Component {
     }
 
     handleKeyPress = (e) => {
-        if (e.key == "Enter") {
+        if (e.key === "Enter") {
             this.handleAdd()
         }
     }
@@ -58,6 +58,7 @@ class Chat extends React.Component {
             <li><button className="nav" onClick={this.handleLogout}>Log Out</button></li>
           </ul>
         </div>
+
         {this.state.popup ? <div><Popup/></div> : null}
 
           <div>
@@ -70,8 +71,8 @@ class Chat extends React.Component {
               </div>
 
               <div className="chatInputBox">
-                    <input type="text" value={this.state.text} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
-                    <button onClick={this.handleAdd}>Add whatever to list</button>
+                    <input className="text" type="text" autoFocus value={this.state.text} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
+                    <button className="send" onClick={this.handleAdd}>Send</button>
               </div>
           </div>
       </div>

@@ -68,3 +68,40 @@ li button:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+div.chatInputBox {
+    width: 85%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+}
+
+button.send {
+    position: relative;
+    display: inline block;
+    outline: none;
+}
+
+button:focus.send {
+    outline: none;
+}
+
+input.text {
+    position: relative;
+    display: inline block;
+    margin: none;
+    padding: none;
+    outline: none;
+}
+
+div.chatDisplayBox {
+    display: inline-block;
+    border-color: #972a0c;
+    border-radius: 8px;
+    padding: none;
+    margin: 20px;
+    float: right;
+    width: 20%;
+    text-align: right;
+}
