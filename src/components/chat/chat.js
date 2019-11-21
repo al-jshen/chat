@@ -14,6 +14,8 @@ class Chat extends React.Component {
   }
 
   handleLogout = () => {
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
     this.props.rename('');
     this.props.changelog(false);
     this.props.history.push('/login');
