@@ -7,7 +7,9 @@ class Chat extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      popup: false,
+        popup: false,
+        text: '',
+        list: []
     }
   }
 
@@ -22,6 +24,25 @@ class Chat extends React.Component {
       popup: !this.state.popup,
     });
   }
+
+    handleChange = (e) => {
+        this.setState({
+            'text': e.target.value
+        })
+    }
+
+    handleKeyPress = (e) => {
+        if (e.key == "Enter") {
+            this.handleAdd()
+        }
+    }
+
+    handleAdd = () => {
+        this.setState({
+            'list': [...this.state.list, this.state.text],
+            'text': ''
+        })
+    }
 
   render() {
     if (!this.props.islogged) {
@@ -38,6 +59,21 @@ class Chat extends React.Component {
           </ul>
         </div>
         {this.state.popup ? <div><Popup/></div> : null}
+
+          <div>
+              <div className="chatDisplayBox">
+                  {this.state.list.map((item, index) => {
+                      return (
+                        <div key={index}>{item}</div>
+                      )
+                  })}
+              </div>
+
+              <div className="chatInputBox">
+                    <input type="text" value={this.state.text} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
+                    <button onClick={this.handleAdd}>Add whatever to list</button>
+              </div>
+          </div>
       </div>
     );
   }

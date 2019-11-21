@@ -6,7 +6,6 @@ import Login from './components/login';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
-
   render() {
     return(
       <Router>
@@ -17,7 +16,7 @@ class App extends React.Component {
             <Route path='/login' component={Login}/>
           </Switch>
         </div>
-      </Router>
+     </Router>
     );
   }
 }
