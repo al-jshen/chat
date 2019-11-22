@@ -1,6 +1,6 @@
 import React from 'react';
 import './login.css';
-import { authurl } from '../url';
+import { baseurl } from '../url';
 import { connect } from 'react-redux';
 
 const axios = require('axios');
@@ -47,7 +47,7 @@ class Login extends React.Component {
         e.preventDefault()
         const username = this.state.username;
         const password = this.state.password;
-        axios.post(authurl, {
+        axios.post(`${baseurl}/auth`, {
             username: username,
             password: password
         })
